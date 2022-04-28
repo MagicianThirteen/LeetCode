@@ -18,9 +18,11 @@ namespace LeetCode
             /*int[] num1 = new int[] { 1 };
             int[] num2 = new int[] { };*/
             int[] num1 = new int[] { };
-            int[] num2 = new int[] {1};
+            int[] num2 = new int[] { 1 };
+            //mergeSortedArray.Merge(num1, 1, num2, 0);
             mergeSortedArray.Merge(num1, 0, num2, 1);
-            
+            //mergeSortedArray.Merge(num1, 3, num2, 3);
+
         }
         private  Dictionary<int, int> saveResult = new Dictionary<int, int>();
         public  int ClimbStairs(int n)

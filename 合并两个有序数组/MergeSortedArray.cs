@@ -8,14 +8,14 @@ namespace LeetCode
 {
     public class MergeSortedArray
     {
-        public void Merge(int[] nums1, int m, int[] nums2, int n)
+        /*public void Merge(int[] nums1, int m, int[] nums2, int n)
         {
-            /*用自带的这个效率不高
+            *//*用自带的这个效率不高
              * for(int i = 0; i < n; i++)
             {
                 nums1[m+i]=nums2[i];
             }
-            Array.Sort(nums1);*/
+            Array.Sort(nums1);*//*
 
             //利用多余的空间temp,双指针n1Index,n2Index比较
             //因为两个数组本身有序，所以比较会出现这几种情况
@@ -68,8 +68,53 @@ namespace LeetCode
             {
                 Console.WriteLine(nums1[i]);
             }
-        }
+        }*/
 
+        public void Merge(int[] nums1, int m, int[] nums2, int n)
+        {
+            int k = m + n - 1;
+            for(int index = k, nums1Index = m - 1, nums2Index = n - 1; index >= 0; index--)
+            {
+                if (m != 0 && n != 0)
+                {
+                    if (nums1Index >= 0&&nums2Index>=0&&nums1[nums1Index] > nums2[nums2Index])
+                    {
+                        nums1[index] = nums1[nums1Index--];
+                    }
+                    else if(nums1Index >= 0 && nums2Index >= 0 && nums1[nums1Index] <= nums2[nums2Index])
+                    {
+                        nums1[index] = nums2[nums2Index--];
+                    }
+                    else if (nums1Index < 0 && nums2Index >= 0)
+                    {
+                        nums1[index] = nums2[nums2Index--];
+                    }
+                    else if (nums2Index < 0 && nums1Index >= 0)
+                    {
+                        break;
+                    }
+
+                }
+                else if (m == 0 && n>0)
+                {
+                    nums1 = new int[n];
+                    if (nums2Index >= 0)
+                    {
+                        
+                        nums1[index] = nums2[nums2Index--];
+                    }
+                }else if (m>0 && n == 0)
+                {
+                    break;
+                }
+            }
+
+            for (int i = 0; i < nums1.Length; i++)
+            {
+                Console.WriteLine(nums1.Length);
+                Console.WriteLine(nums1[i]);
+            }
+        }
 
     }
 }
