@@ -10,18 +10,9 @@ namespace LeetCode
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            /*L_70 l_70 = new L_70(); 
-            Console.WriteLine($"当前有6个楼梯时，总共有{l_70.ClimbStairs(6)}种解法");*/
-            MergeSortedArray mergeSortedArray = new MergeSortedArray();
-            /*int[] num1 = new int[] { 1, 2, 3 ,0,0,0};
-            int[] num2 = new int[] { 2, 5, 6 };*/
-            /*int[] num1 = new int[] { 1 };
-            int[] num2 = new int[] { };*/
-            int[] num1 = new int[] { };
-            int[] num2 = new int[] { 1 };
-            //mergeSortedArray.Merge(num1, 1, num2, 0);
-            mergeSortedArray.Merge(num1, 0, num2, 1);
-            //mergeSortedArray.Merge(num1, 3, num2, 3);
+            MoveZeroes moveZeroes = new MoveZeroes();
+            int[] nums = { 1, 0, 0, 3, 12 };
+            moveZeroes.Move(nums);
 
         }
         private  Dictionary<int, int> saveResult = new Dictionary<int, int>();
