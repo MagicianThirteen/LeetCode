@@ -10,9 +10,9 @@ namespace LeetCode
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            MoveZeroes moveZeroes = new MoveZeroes();
-            int[] nums = { 1, 0, 0, 3, 12 };
-            moveZeroes.Move(nums);
+            FindDisappearedNumbers findDisappeared = new FindDisappearedNumbers();
+            int[] nums = {4,3,2,7,8,2,3,1};
+            findDisappeared.Find(nums);
 
         }
         private  Dictionary<int, int> saveResult = new Dictionary<int, int>();
